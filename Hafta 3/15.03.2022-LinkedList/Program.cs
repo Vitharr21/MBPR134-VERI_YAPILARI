@@ -7,8 +7,8 @@ namespace _15._03._2022_LinkedList
     {
         static void Main(string[] args)
         {
-            /*LinkedList<string> lst = new LinkedList<string>();
-            lst.*/
+            LinkedList<string> lst = new LinkedList<string>();
+
 
             VY_Node nd1 = new VY_Node("Ahmet");
             VY_Node nd2 = new VY_Node("Mehmet");
@@ -23,8 +23,24 @@ namespace _15._03._2022_LinkedList
             VY_BagliListe bagliListe = new VY_BagliListe();
             bagliListe.head = nd1;
 
+            /*
+             listeyi gezme - traverse linked list
+             */
 
-            Console.WriteLine("Hello World!");
+            VY_Node aktifNode = bagliListe.head; //üzerinde çalışılan node
+            do
+            {
+                Console.Write(aktifNode.veri);
+
+                aktifNode = aktifNode.sonraki;
+
+                if (aktifNode.sonraki == null)
+                {
+                    Console.Write(aktifNode.veri);
+                }
+
+            } while (aktifNode.sonraki != null);
+
         }
     }
 }
