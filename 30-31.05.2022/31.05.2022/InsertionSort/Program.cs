@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace InsertionSort
 {
@@ -6,6 +7,7 @@ namespace InsertionSort
     {
         static void Main(string[] args)
         {
+            ArrayList deneme = new ArrayList();
             int[] sayilar = { 24, 46, 46, 12, 30, 21, 1, 40, 45, 20 };
 
             int[] siraliDizi = new int[sayilar.Length];
