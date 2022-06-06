@@ -26,34 +26,29 @@ namespace QuickSort
 
         private static int parcayaAyir(int[] p_sayilar, int p_ilkIndis, int p_sonIndis)
         {
-            int temp;
-            int pivot = p_sayilar[p_sonIndis];
-            //int enKucukIndis = (p_ilkIndis - 1);
-            int enKucukIndis = (p_ilkIndis - 1); // -> -1
+            int pivot = p_sayilar[p_sonIndis]; //son eleman pivot olarak seçilmekte
+            int enKucukIndis = (p_ilkIndis - 1);
 
-            for (int i = p_ilkIndis; i <= p_sonIndis - 1; i++)
+            for (int i = p_ilkIndis; i <= p_sonIndis; i++)
             {
                 if (p_sayilar[i] < pivot)
                 {
-                    //swap();
                     enKucukIndis++;
-                    temp = p_sayilar[enKucukIndis];
-                    p_sayilar[enKucukIndis] = p_sayilar[i];
-                    p_sayilar[i] = temp;
+                    swap(p_sayilar, enKucukIndis, i);
 
                 }
             }
 
-            temp = p_sayilar[enKucukIndis + 1];
-            p_sayilar[p_sonIndis] = p_sayilar[enKucukIndis + 1];
-            p_sayilar[enKucukIndis + 1] = temp;
+            swap(p_sayilar, enKucukIndis + 1, p_sonIndis);
 
             return enKucukIndis + 1;
         }
 
-        private static void swap()
+        private static void swap(int[] p_sayilar, int ilkIndis, int ikinciIndis)
         {
-            throw new NotImplementedException();
+            int temp = p_sayilar[ilkIndis];
+            p_sayilar[ilkIndis] = p_sayilar[ikinciIndis];
+            p_sayilar[ikinciIndis] = temp;
         }
 
         private static int[] SayiUret(int p_uzunlıuk)
