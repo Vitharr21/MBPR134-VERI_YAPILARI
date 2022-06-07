@@ -10,7 +10,12 @@ namespace QuickSort
 
             quickSort(sayilar, 0, sayilar.Length - 1);
 
-            Console.WriteLine("Hello World!");
+            foreach (int eleman in sayilar)
+            {
+                Console.WriteLine(eleman);
+
+            }
+
         }
 
         private static void quickSort(int[] sayilar, int ilkIndis, int sonIndis)
